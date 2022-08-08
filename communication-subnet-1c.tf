@@ -9,8 +9,3 @@ resource "aws_subnet" "StudentPlacement-Frankfurt-communication-subnet-1c" {
   }
 }
 
-
-
-resource "aws_route_table_association" "StudentPlacement-Frankfurt-communication-subnet-1c-association" {
-  subnet_id      = aws_subnet.StudentPlacement-Frankfurt-communication-subnet-1c.id
-}
