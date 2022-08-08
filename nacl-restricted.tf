@@ -1,4 +1,4 @@
-resource "aws_network_acl" "SPN_ACL-communication" {
+resource "aws_network_acl" "SPN_ACL-restricted" {
   vpc_id = "${aws_vpc.StudentPlacement-Frankfurt-vpc.id}"
   subnet_ids = [ "${aws_subnet.StudentPlacement-Frankfurt-restricted-subnet-1a.id}",
   "${aws_subnet.StudentPlacement-Frankfurt-restricted-subnet-1b.id}",
@@ -25,6 +25,6 @@ resource "aws_network_acl" "SPN_ACL-communication" {
     protocol        = "-1"
   }
 tags = {
-    Name = "SPN_ACL-communication"
+    Name = "SPN_ACL-restricted"
     }
 }
