@@ -25,6 +25,6 @@ resource "aws_network_acl" "SPN_ACL-private" {
     protocol        = "-1"
   }
 tags = {
-    Name = "SPN_ACL"
+    Name = "SPN_ACL-private"
     }
 }
