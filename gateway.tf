@@ -8,7 +8,7 @@ resource "aws_internet_gateway" "StudentPlacement-Frankfurt-IG" {
 
 resource "aws_nat_gateway" "StudentPlacement-Frankfurt-nat-Gateway" {
   allocation_id = "${aws_eip.StudentPlacement-Frankfurt-eip-a.id}"
-  subnet_id     = "${aws_subnet.public-subnet-1a.id}"
+  subnet_id     = "${aws_subnet.StudentPlacement-Frankfurt-public-subnet-1a.id}"
  tags ={
           Name = "StudentPlacement-Frankfurt-nat-Gateway"
       }
