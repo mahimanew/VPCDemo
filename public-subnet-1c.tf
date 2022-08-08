@@ -1,6 +1,6 @@
 resource "aws_subnet" "StudentPlacement-Frankfurt-public-subnet-1c" {
   vpc_id     = aws_vpc.StudentPlacement-Frankfurt-vpc.id
-  cidr_block = "172.24.1.128/26"
+  cidr_block = "172.24.1.128/25"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1c"
 
