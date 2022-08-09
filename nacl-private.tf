@@ -1,8 +1,8 @@
-resource "aws_network_acl" "SPN_ACL-private" {
-  vpc_id = "${aws_vpc.StudentPlacement-Frankfurt-vpc.id}"
-  subnet_ids = [ "${aws_subnet.StudentPlacement-Frankfurt-private-subnet-1a.id}",
-  "${aws_subnet.StudentPlacement-Frankfurt-private-subnet-1b.id}",
-  "${aws_subnet.StudentPlacement-Frankfurt-private-subnet-1c.id}"
+resource "aws_network_acl" "StudentPlacement-integration-NACL-private" {
+  vpc_id = "${aws_vpc.StudentPlacement-integration-dev.id}"
+  subnet_ids = [ "${aws_subnet.StudentPlacement-integration-private-subnet-1a.id}",
+  "${aws_subnet.StudentPlacement-integration-private-subnet-1b.id}",
+  "${aws_subnet.StudentPlacement-integration-private-subnet-1c.id}"
    ]
 # allow port 22
   ingress {
@@ -25,6 +25,6 @@ resource "aws_network_acl" "SPN_ACL-private" {
     protocol        = "-1"
   }
 tags = {
-    Name = "SPN_ACL-private"
+    Name = "StudentPlacement-integration-NACL-private"
     }
 }

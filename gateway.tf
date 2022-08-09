@@ -1,19 +1,19 @@
-resource "aws_internet_gateway" "StudentPlacement-Frankfurt-IG" {
-  vpc_id = aws_vpc.StudentPlacement-Frankfurt-vpc.id
+resource "aws_internet_gateway" "StudentPlacement-integration-IG" {
+  vpc_id = aws_vpc.StudentPlacement-integration-dev.id
 
   tags = {
-    Name = "StudentPlacement-Frankfurt-IG"
+    Name = "StudentPlacement-integration-IG"
   }
 }
 
-resource "aws_nat_gateway" "StudentPlacement-Frankfurt-nat-Gateway" {
-  allocation_id = "${aws_eip.StudentPlacement-Frankfurt-eip-a.id}"
-  subnet_id     = "${aws_subnet.StudentPlacement-Frankfurt-public-subnet-1a.id}"
+resource "aws_nat_gateway" "StudentPlacement-integration-nat-Gateway" {
+  allocation_id = "${aws_eip.StudentPlacement-integration-eip-a.id}"
+  subnet_id     = "${aws_subnet.StudentPlacement-integration-public-subnet-1a.id}"
  tags ={
-          Name = "StudentPlacement-Frankfurt-nat-Gateway"
+          Name = "StudentPlacement-integration-nat-Gateway"
       }
 }
 
-resource "aws_eip" "StudentPlacement-Frankfurt-eip-a" {
+resource "aws_eip" "StudentPlacement-integration-eip-a" {
   vpc      = true
 }
